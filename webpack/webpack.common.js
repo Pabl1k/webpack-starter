@@ -30,9 +30,14 @@ module.exports = {
         type: "asset/inline",
       },
       {
-        test: /\.(txt|svg|glsl|vert|frag)/,
+        test: /\.(txt|glsl|vert|frag)/,
         type: "asset/source",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.tsx?$/,
+        use: ['@svgr/webpack'],
       },
     ],
   },
